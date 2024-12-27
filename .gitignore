@@ -1,0 +1,14 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Finder attributes
+._*
+
+# macOS resource forks
+.Spotlight-V100
+.Trashes
+
+# Ignore virtual environment
+.venv/
