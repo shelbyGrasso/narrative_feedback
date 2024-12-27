@@ -1,0 +1,6 @@
+pytest         # Testing framework
+regex          # Advanced regex (better than Python's built-in re)
+nltk           # Natural Language Toolkit (optional for text processing)
+transformers   # Hugging Face models (optional for emotion analysis)
+matplotlib     # Visualization library (optional for emotional arcs)
+spacy          # Advanced NLP
