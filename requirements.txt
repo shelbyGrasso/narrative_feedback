@@ -3,4 +3,8 @@ regex          # Advanced regex (better than Python's built-in re)
 nltk           # Natural Language Toolkit (optional for text processing)
 transformers   # Hugging Face models (optional for emotion analysis)
 matplotlib     # Visualization library (optional for emotional arcs)
-spacy          # Advanced NLP
+spacy~=3.8.3
+torch
+pandas~=2.2.3
+scikit-learn~=1.6.0
+datasets~=3.2.0

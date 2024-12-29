@@ -1,6 +1,18 @@
-from src.text_processor import segment_text, is_list
+from src.text_processor import segment_text, is_list, split_into_clauses_with_relationships
 
 # Tests for segmenting text into sentences
+
+def test_split_into_clauses():
+    sentence = "She was happy, but she felt nervous."
+    clauses = split_into_clauses_with_relationships(sentence)
+    assert len(clauses) == 2
+    assert clauses[0]["text"] == "She was happy"
+    assert clauses[1]["relationship"] == "contrast"
+
+def test_segment_text():
+    text = "He smiled and walked away. But he was sad."
+    result = segment_text(text)
+    assert len(result[0]["sentences"]) == 2
 
 # Test: Simple case with two sentences
 def test_segment_text_simple_case():

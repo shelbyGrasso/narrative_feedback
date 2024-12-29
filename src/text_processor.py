@@ -33,16 +33,11 @@ def is_list(sentence):
     if lists:
         return True
 
-
-
-
-
-
 def split_into_clauses_with_relationships(sentence):
     # Normalize spaces before splitting
     sentence = re.sub(r'\s+', ' ', sentence).strip()
-    print(sentence)
-    print(is_list(sentence))
+    #print(sentence)
+    #print(is_list(sentence))
 
     # Check if the sentence is a list (i.e., contains conjunctions like "and", "or")
     if is_list(sentence):
@@ -57,7 +52,7 @@ def split_into_clauses_with_relationships(sentence):
     previous_conjunction = None
 
     # Step 2: Process the split result
-    print(conjunction_split)
+    #print(conjunction_split)
     for i in range(0, len(conjunction_split), 2):
         if previous_conjunction is not None:
             clause = previous_conjunction + ' ' + conjunction_split[i].strip()
