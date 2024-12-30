@@ -1,12 +1,13 @@
-import 'flowbite';
 import React, { useState } from 'react';
 
 const TextInput = ({ onSubmit }) => {
   const [text, setText] = useState("");
 
   const handleSubmit = () => {
-    onSubmit(text);
-    setText("");
+    if (text.trim()) {
+      onSubmit(text); // Pass text to onSubmit (API call in App.js)
+      setText(""); // Clear the input field
+    }
   };
 
   return (
@@ -17,22 +18,14 @@ const TextInput = ({ onSubmit }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-        <div className="flex space-x-4">
-            <div className="flex space-x-4">
-                <button
-                    className="px-4 py-2 bg-walnut-brown text-beige rounded-lg shadow hover:bg-gold hover:text-walnut-brown focus:ring-2 focus:ring-gold"
-                    onClick={handleSubmit}
-                >
-                    Submit
-                </button>
-                <button
-                    className="px-4 py-2 bg-walnut-brown text-beige rounded-lg shadow hover:bg-gold hover:text-walnut-brown focus:ring-2 focus:ring-gold"
-                    onClick={() => setText("Sample text for demonstration.")}
-                >
-                    Load Example
-                </button>
-            </div>
-        </div>
+      <div className="flex space-x-4">
+        <button
+          onClick={handleSubmit}
+          className="px-4 py-2 bg-walnut-brown text-beige rounded-lg shadow hover:bg-gold hover:text-walnut-brown focus:ring-2 focus:ring-gold"
+        >
+          Analyze
+        </button>
+      </div>
     </div>
   );
 };

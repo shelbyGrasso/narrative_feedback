@@ -1,9 +1,18 @@
-from backend.src.text_processor import segment_text
-from backend.src.emotion_analyzer import analyze_emotion
+from text_processor import segment_text
+from emotion_analyzer import analyze_emotion
 import json
 
-def analyze_text_with_emotions(text):
-    segmented_text = segment_text(text)
+from fastapi import APIRouter
+from pydantic import BaseModel
+
+router = APIRouter()
+
+class TextInput(BaseModel):
+    text: str  # Ensure this matches the expected structure
+
+@router.post("/")
+async def analyze_text_with_emotions(input: TextInput):
+    segmented_text = segment_text(input.text)
     result = {"paragraphs": []}
 
     for paragraph_data in segmented_text:
