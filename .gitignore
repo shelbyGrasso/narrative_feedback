@@ -17,4 +17,4 @@
 .idea/
 
 # Large data
-/data/raw_data/
+/backend/data/raw_data/

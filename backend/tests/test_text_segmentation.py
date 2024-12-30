@@ -1,4 +1,4 @@
-from src.text_processor import segment_text, is_list, split_into_clauses_with_relationships
+from backend.src.text_processor import segment_text, is_list, split_into_clauses_with_relationships
 
 # Tests for segmenting text into sentences
 

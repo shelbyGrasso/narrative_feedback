@@ -1,6 +1,5 @@
-import pytest
-from src.emotion_analyzer import analyze_emotion
-from src.text_processor import segment_text
+from backend.src.emotion_analyzer import analyze_emotion
+from backend.src.text_processor import segment_text
 
 def test_segment_and_analyze():
     text = "She was happy, but she felt nervous."

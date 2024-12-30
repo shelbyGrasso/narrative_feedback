@@ -101,6 +101,7 @@ def segment_text(text):
                 "paragraph": i,
                 "sentences": sentences
             })
+    print(segmented)
     return segmented
 
 
