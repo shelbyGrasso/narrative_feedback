@@ -1,5 +1,5 @@
-from text_processor import segment_text
-from emotion_analyzer import analyze_emotion
+from app.text_processor import segment_text
+from app.emotion_analyzer import analyze_emotion
 import json
 
 from fastapi import APIRouter

@@ -1,4 +1,4 @@
-from backend.src.analyze_text import analyze_text_with_emotions
+from backend.src.app.analyze_text import analyze_text_with_emotions
 
 def test_analyze_text_with_emotions_paragraphs():
     # Input text with paragraphs

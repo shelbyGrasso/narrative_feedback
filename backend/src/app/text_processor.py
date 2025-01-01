@@ -4,7 +4,6 @@ import re
 # Load the spaCy language model
 nlp = spacy.load('en_core_web_sm')
 
-
 def is_list(sentence):
     doc = nlp(sentence)
     lists = []

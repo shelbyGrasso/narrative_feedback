@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from analyze_text import router as analyze_text_router
+from app.analyze_text import router as analyze_text_router
 
 # Create the main FastAPI app
 app = FastAPI()
