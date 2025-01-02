@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         beige: '#f5e9dc', // Soft beige for text
-        'walnut-brown': '#4b2e2f', // Rich dark brown
+        'walnut-brown': '#241700', // Rich dark brown
         gold: '#d4af37', // Muted gold for accents
       },
     },

@@ -77,26 +77,39 @@ console.log("Raw data for recomputation:", sourceData);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-beige via-beige to-gray-100 flex flex-col items-center">
-      <header className="w-full py-6 bg-walnut-brown text-beige shadow-md">
-        <h1 className="text-center text-3xl font-bold tracking-wide">
-          Narrative Feedback Tool
-        </h1>
-      </header>
+  <div className="min-h-screen bg-gradient-to-b from-beige via-beige to-gray-100 flex flex-col items-center">
+    <header className="w-full py-6 bg-walnut-brown text-beige shadow-md">
+      <h1 className="text-center text-3xl font-bold tracking-wide">
+        Narrative Feedback Tool
+      </h1>
+    </header>
 
-      <main className="container mx-auto px-8 py-10 space-y-8">
-        <TextInput onSubmit={(text) => analyzeText(text)} />
-        <ParameterControls
-          threshold={threshold}
-          onChange={(newThreshold) => {
-            setThreshold(newThreshold); // Update local state
-            recomputeText(newThreshold); // Dynamically recompute results
-          }}
-        />
-        <AnalysisResults results={results} /> {/* Pass results to AnalysisResults */}
-      </main>
-    </div>
+    <main className="container mx-auto px-8 py-10 space-y-8">
+      {/* Flex container for TextInput and ParameterControls */}
+      <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0 md:space-x-6">
+        {/* TextInput */}
+        <div className="w-full md:w-1/2">
+          <TextInput onSubmit={(text) => analyzeText(text)} />
+        </div>
+
+        {/* ParameterControls */}
+        <div className="w-full md:w-1/2">
+          <ParameterControls
+            threshold={threshold}
+            onChange={(newThreshold) => {
+              setThreshold(newThreshold); // Update local state
+              recomputeText(newThreshold); // Dynamically recompute results
+            }}
+          />
+        </div>
+      </div>
+
+      {/* AnalysisResults */}
+      <AnalysisResults results={results} />
+    </main>
+  </div>
   );
+
 };
 
 export default App;
