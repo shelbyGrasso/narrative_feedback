@@ -17,7 +17,7 @@ emotion_labels = [
 ]
 
 
-def analyze_emotion(text):
+def analyze_emotion(text, selected_threshold=0.5):
     """
     Analyze the emotions present in a given text.
 
@@ -43,7 +43,7 @@ def analyze_emotion(text):
     probabilities = torch.softmax(logits, dim=-1).squeeze().tolist()
 
     # Filter emotions with scores above a threshold (e.g., 0.1)
-    threshold = 0.023
+    threshold = selected_threshold
     emotions = {emotion_labels[i]: prob for i, prob in enumerate(probabilities) if prob > threshold}
 
     return emotions

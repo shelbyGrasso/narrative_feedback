@@ -5,14 +5,18 @@ import json
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+from app.adjust_parameters import current_threshold
+
 router = APIRouter()
 
 class TextInput(BaseModel):
     text: str  # Ensure this matches the expected structure
+    threshold: float
 
 @router.post("/")
 async def analyze_text_with_emotions(input: TextInput):
     segmented_text = segment_text(input.text)
+    emotion_threshold = input.threshold
     result = {"paragraphs": []}
 
     for paragraph_data in segmented_text:
@@ -28,7 +32,7 @@ async def analyze_text_with_emotions(input: TextInput):
             }
 
             for clause_data in sentence_data["clauses"]:
-                emotions = analyze_emotion(clause_data["text"])
+                emotions = analyze_emotion(clause_data["text"], emotion_threshold)
                 clause = {
                     "text": clause_data["text"],
                     "relationship": clause_data["relationship"],

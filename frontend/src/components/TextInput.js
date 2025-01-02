@@ -6,7 +6,6 @@ const TextInput = ({ onSubmit }) => {
   const handleSubmit = () => {
     if (text.trim()) {
       onSubmit(text); // Pass text to onSubmit (API call in App.js)
-      setText(""); // Clear the input field
     }
   };
 
