@@ -17,7 +17,7 @@ emotion_labels = [
 ]
 
 
-def analyze_emotion(text, selected_threshold=0.5):
+def analyze_emotion(text, selected_threshold=0.0):
     """
     Analyze the emotions present in a given text.
 
