@@ -29,7 +29,7 @@ const AnalysisResults = ({ results }) => {
               <ul className="pl-4">
                 {sentence.clauses.map((clause, clauseIndex) => (
                   <li key={clauseIndex} className="list-disc text-gray-700">
-                    Clause {clauseIndex + 1}: {clause.text} {/* Render the text property */}
+                    Segment {clauseIndex + 1}: {clause.text} {/* Render the text property */}
                     <ul className="pl-4">
                       <li>
                         Relationship: {clause.relationship}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TextInput from "./components/TextInput";
 import ParameterControls from "./components/ParameterControls";
 import AnalysisResults from "./components/AnalysisResults";
+import EmotionHeatMap from "./components/EmotionHeatMap";
 
 const App = () => {
   const [results, setResults] = useState({ paragraphs: [] }); // Default structure
@@ -106,6 +107,7 @@ console.log("Raw data for recomputation:", sourceData);
 
       {/* AnalysisResults */}
       <AnalysisResults results={results} />
+      <EmotionHeatMap results={results} />
     </main>
   </div>
   );
